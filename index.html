@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.svg">
+	<link rel="stylesheet" href="styles.css">
+    <title>Path Finder</title>
+</head>
+<body>
+	<div class="container">
+			<canvas id="canvas" width="1200" height="1200" ></canvas>
+		<div class="controls">
+			<a href="https://github.com/dthcs" style="color:black; text-decoration: none;">GitHub Page</a>
+			<button onclick="runRobot()" class="astar">Run Robot</button>
+			<button onclick="stopRobot()">Stop</button>
+
+			<br />
+
+			<div>
+				<button id="click_record">AI Voice</button>
+				<br />
+				<br />
+				<textarea name="" id="convert_text" placeholder="say: '위험 일 이' or '색깔 일 이'"></textarea>
+				 
+			</div>
+		</div>
+		
+		
+
+
+
+		<table>
+			<tr>
+				<td>
+					Map Size 
+				</td>
+				<td>
+					<input type="number" id="rowsInput"  placeholder="rows = 10 by default" />
+				</td>
+				<td>
+					<input type="number" id="columnsInput"  placeholder="columns = 10 by default" />
+				</td>
+				<td>
+					<button onclick="handleSubmit('mapSize')">Submit</button>
+				</td>
+				<td colspan="4" id="mapSizeDisplay"></td>	
+			</tr>
+
+			
+			<tr>
+				<td>
+					Start 
+				</td>
+				<td>
+					<input type="number" id="startRowInput"  placeholder="" />
+				</td>
+				<td>
+					<input type="number" id="startColumnInput"  placeholder="" />
+				</td>
+				<td>
+					<button onclick="handleSubmit('startPoint')">Submit</button>
+				</td>
+				<td colspan="4" id="mapSizeDisplay"></td>	
+			</tr>
+
+			<tr>
+				<td>
+					Spot 
+				</td>
+				<td>
+					<input type="number" id="endRowInput"  placeholder="" />
+				</td>
+				<td>
+					<input type="number" id="endColumnInput"  placeholder="" />
+				</td>
+				<td>
+					<button onclick="handleSubmit('endPoint')">Submit</button>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Hazard 
+				</td>
+				<td>
+					<input type="number" id="hazardRowInput"  placeholder="" />
+				</td>
+				<td>
+					<input type="number" id="hazardColumnInput"  placeholder="" />
+				</td>
+				<td>
+					<button onclick="handleSubmit('hazardPoint')">Submit</button>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Color Blob 
+				</td>
+				<td>
+					<input type="number" id="colorBlobRowInput"  placeholder="" />
+				</td>
+				<td>
+					<input type="number" id="colorBlobColumnInput"  placeholder="" />
+				</td>
+				<td>
+					<button onclick="handleSubmit('colorBlobPoint')">Submit</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+	
+	<div id="notice" class="notice"> Color Blob Notice: </div>
+	
+	
+	<script src="scripts/main.js"></script>
+	<script src="scripts/board.js"></script>
+	<script src="scripts/Astar.js"></script>
+	<script src="scripts/ai_voice.js"></script>
+</body>
+</html>
