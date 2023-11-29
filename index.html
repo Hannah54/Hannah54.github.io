@@ -6,32 +6,31 @@
 	<link rel="icon" href="favicon.svg">
 	<link rel="stylesheet" href="styles.css">
     <title>Path Finder</title>
+    <style>
+        body{background-color: mistyrose;}
+        h3{
+            text-align: center;
+            color:black;
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-			<canvas id="canvas" width="1200" height="1200" ></canvas>
-		<div class="controls">
-			<a href="https://github.com/dthcs" style="color:black; text-decoration: none;">GitHub Page</a>
-			<button onclick="runRobot()" class="astar">Run Robot</button>
-			<button onclick="stopRobot()">Stop</button>
+    <h3> H2 TEAM - MOBILE ROBOT CONTROLLER</h3>
+	<div class="controls">
+		<a href="https://github.com/dthcs" style="color:black; text-decoration: none;">GitHub Page</a>
+	
 
-			<br />
+	<button onclick="runRobot()" class="astar">Run Robot</button>
+	<button onclick="stopRobot()">Stop</button>	
+	<div>
+		<button id="click_record">AI Voice</button>
+		<br />
+		<br />
+		<textarea name="" id="convert_text" placeholder="say: '위험 일 이' or '색깔 일 이'"></textarea>
 
-			<div>
-				<button id="click_record">AI Voice</button>
-				<br />
-				<br />
-				<textarea name="" id="convert_text" placeholder="say: '위험 일 이' or '색깔 일 이'"></textarea>
-				 
-			</div>
-		</div>
-		
-		
-
-
-
+	</div>
 		<table>
-			<tr>
+			<tr><right>
 				<td>
 					Map Size 
 				</td>
@@ -45,7 +44,7 @@
 					<button onclick="handleSubmit('mapSize')">Submit</button>
 				</td>
 				<td colspan="4" id="mapSizeDisplay"></td>	
-			</tr>
+			</right></tr>
 
 			
 			<tr>
@@ -110,12 +109,10 @@
 			</tr>
 		</table>
 	</div>
-
-
-
-	
 	<div id="notice" class="notice"> Color Blob Notice: </div>
-	
+	<div class="container">
+		<p><center><canvas id="canvas" width="1200" height="1200" ></canvas></center></p>
+
 	
 	<script src="scripts/main.js"></script>
 	<script src="scripts/board.js"></script>
