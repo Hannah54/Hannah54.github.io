@@ -264,41 +264,35 @@ const handleNeighboursChange = () => {
 
 handleNeighboursChange()
 
-    var img = {
-        "start": "C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/robot.png",
-        "end": "C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "wall":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "empty":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "visited":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "open":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "curent":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "path":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "frozen":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "left":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "down":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "right":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "up":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-    
-        "neighbour":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "blob":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png",
-        "enterBlob":"C:/Users/phanh/Documents/mobile_robot_controller/hình ảnh/end.png"
-    }; 
-
 //color the cells
 function rect(x, y, w, h, state) {
     //  draws a rectangle as per the given arguments
     // console.log("state = ", state)
-    if (images[state]){
-        var img = new Image();
-        img.src = images[state];
-        ctx.drawImages(img, x, t, w, h);
-    }else{
-        ctx.fillRect(x, y, w, h);
-    }
+    if (state == "start") { ctx.fillStyle = "#7bc043 " }
+    else if (state == "end") { ctx.fillStyle = "red" }
+    else if (state == "wall") { ctx.fillStyle = "#1e1f26" }
+    else if (state == "empty") { ctx.fillStyle = " white " }
+    else if (state == "visited") { ctx.fillStyle = "#4f5b66" }
+    else if (state == "open") { ctx.fillStyle = "#3d1e6d" }
+    else if (state == "current") { ctx.fillStyle = "purple" }
+    else if (state == "path") { ctx.fillStyle = "#316aff " }
+    else if (state == "frozen") { ctx.fillStyle = "green" }
+
+    else if (state == "left") { ctx.fillStyle = "blue" }
+    else if (state == "down") { ctx.fillStyle = "orange" }
+    else if (state == "right") { ctx.fillStyle = "green" }
+    else if (state == "up") { ctx.fillStyle = "red" }
+
+    else if (state == "neighbour") { ctx.fillStyle = "blue" }
+    else if (state == "blob") { ctx.fillStyle = "pink" }
+    else if (state == "enterBlob") { ctx.fillStyle = "yellow" }
+
+
+    ctx.beginPath();
+    ctx.rect(x, y, w, h)
+    ctx.closePath();
+    ctx.fill();
 }
-
-
-rect(x, y, width, height, "start");
 
 function clear() {
     // console.log("clearing the canvas")
